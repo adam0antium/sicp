@@ -1,10 +1,3 @@
-#lang sicp
-
-(#%provide improve
-    average
-    good-enough?
-    sqrt
-    square)
 
 (define (sqrt-iter guess x)
   (if (good-enough? guess x)
@@ -18,7 +11,7 @@
   (/ (+ x y) 2))
 
 (define (good-enough? guess x)
-  (< (abs (- (square guess) x)) 0.001))
+  (< (abs (- (square guess) x)) 1e-5))
 
 (define (sqrt x)
   (sqrt-iter 1.0 x))
